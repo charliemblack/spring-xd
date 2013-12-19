@@ -49,17 +49,13 @@ public class GemFireMessageBus extends MessageBusSupport implements DisposableBe
     private final Log logger = LogFactory.getLog(this.getClass());
 
     public GemFireMessageBus(MultiTypeCodec<Object> codec) {
-        System.out.println("org.springframework.integration.x.gemfire.GemFireMessageBus.GemFireMessageBus");
         setCodec(codec);
     }
 
     //incoming queue
     @Override
     public void bindConsumer(String name, MessageChannel moduleInputChannel, Collection<MediaType> acceptedMediaTypes, boolean aliasHint) {
-        System.out.println("org.springframework.integration.x.gemfire.GemFireMessageBus.bindConsumer");
-        System.out.println("name = " + name);
         String messageChannelName = String.format("%s%s.queue", PREFIX, name);
-        System.out.println("messageChannelName = " + messageChannelName);
         MessageProducerSupport messageProducerSupport = GemFireRPCMessaging.createMessageProducer(messageChannelName);
         doRegisterConsumer(name, moduleInputChannel, acceptedMediaTypes, messageProducerSupport);
     }
@@ -67,10 +63,7 @@ public class GemFireMessageBus extends MessageBusSupport implements DisposableBe
     //incomming topic
     @Override
     public void bindPubSubConsumer(String name, MessageChannel inputChannel, Collection<MediaType> acceptedMediaTypes) {
-        System.out.println("org.springframework.integration.x.gemfire.GemFireMessageBus.bindPubSubConsumer");
-        System.out.println("name = " + name);
         String messageChannelName = String.format("%s%s.topic", PREFIX, name);
-        System.out.println("messageChannelName = " + messageChannelName);
         MessageProducerSupport messageProducerSupport = GemFireRPCMessaging.createMessageProducer(messageChannelName);
         doRegisterConsumer(name, inputChannel, acceptedMediaTypes, messageProducerSupport);
 
@@ -79,17 +72,12 @@ public class GemFireMessageBus extends MessageBusSupport implements DisposableBe
     //outgoing queue
     @Override
     public void bindProducer(String name, MessageChannel outputChannel, boolean aliasHint) {
-        System.out.println("org.springframework.integration.x.gemfire.GemFireMessageBus.bindProducer");
-        System.out.println("name = " + name);
-
         doRegisterProducer(name, outputChannel, new QueueMessageSender(String.format("%s%s.queue", PREFIX, name)));
     }
 
     //outgoing topic
     @Override
     public void bindPubSubProducer(String name, MessageChannel outputChannel) {
-        System.out.println("org.springframework.integration.x.gemfire.GemFireMessageBus.bindPubSubProducer");
-        System.out.println("name = " + name);
         doRegisterProducer(name, outputChannel, new TopicMessageSender(String.format("%s%s.topic", PREFIX, name)));
     }
 

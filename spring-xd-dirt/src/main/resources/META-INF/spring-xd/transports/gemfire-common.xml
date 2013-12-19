@@ -36,16 +36,8 @@
 
     <gfe:cache properties-ref="__spring_xd_props" critical-heap-percentage="90" eviction-heap-percentage="80"/>
     <gfe:cache-server auto-startup="true" port="0"/>
-    <gfe:replicated-region id="__spring_xd_deploy">
-        <gfe:cache-listener>
-            <bean class="org.springframework.integration.x.gemfire.GemFireLoggingListener"/>
-        </gfe:cache-listener>
-    </gfe:replicated-region>
-    <gfe:replicated-region id="__spring_xd_undeploy">
-        <gfe:cache-listener>
-            <bean class="org.springframework.integration.x.gemfire.GemFireLoggingListener"/>
-        </gfe:cache-listener>
-    </gfe:replicated-region>
+    <gfe:replicated-region id="__spring_xd_deploy"/>
+    <gfe:replicated-region id="__spring_xd_undeploy"/>
 
     <gfe:function-service>
         <gfe:function>

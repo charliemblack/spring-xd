@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int-gfe="http://www.springframework.org/schema/integration/gemfire"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration/gemfire http://www.springframework.org/schema/integration/gemfire/spring-integration-gemfire.xsd">
+
+    <bean id="__GemFireGroup" class="java.lang.String">
+        <constructor-arg value="admin"/>
+    </bean>
+    <import resource="gemfire-common.xml"/>
+
+    <int-gfe:outbound-channel-adapter region="__spring_xd_deploy" channel="deployChannel">
+        <int-gfe:cache-entries>
+            <entry key="1" value="payload"/>
+        </int-gfe:cache-entries>
+    </int-gfe:outbound-channel-adapter>
+    <int-gfe:outbound-channel-adapter region="__spring_xd_undeploy" channel="undeployChannel">
+        <int-gfe:cache-entries>
+            <entry key="1" value="payload"/>
+        </int-gfe:cache-entries>
+    </int-gfe:outbound-channel-adapter>
+</beans>

@@ -20,5 +20,5 @@ package org.springframework.xd.dirt.server.options;
  * @author David Turanski
  */
 public enum DataTransport {
-	local, rabbit, redis
+	local, rabbit, redis, gemfire
 }

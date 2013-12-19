@@ -35,7 +35,7 @@ public class CommonDistributedOptions extends CommonOptions {
 	}
 
 	public static enum ControlTransport {
-		rabbit, redis
+		rabbit, redis, gemfire
 	}
 
 	// Should be pushed down to AdminOptions but currently

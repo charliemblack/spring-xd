@@ -14,40 +14,11 @@
  * limitations under the License.
  */
 
-package org.springframework.xd.module;
-
-import org.springframework.context.ConfigurableApplicationContext;
-
+package org.springframework.xd.dirt.server.options;
 
 /**
- * 
- * @author David Turanski
+ * @author Thomas Risberg
  */
-public class PluginAdapter implements Plugin {
-
-	@Override
-	public void preProcessModule(Module module) {
-	}
-
-	@Override
-	public void postProcessModule(Module module) {
-	}
-
-	@Override
-	public void removeModule(Module module) {
-	}
-
-	@Override
-	public void beforeShutdown(Module module) {
-	}
-
-	@Override
-	public void preProcessSharedContext(ConfigurableApplicationContext context) {
-	}
-
-	@Override
-	public boolean supports(Module module) {
-		return true;
-	}
-
+public enum HadoopDistro {
+	hadoop12, hadoop22, phd1, cdh4, hdp13
 }

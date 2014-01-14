@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.springframework.xd.module.util;
+package org.springframework.xd.module.support;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -37,16 +37,6 @@ public class DateTriggerTest {
 	public void testEmptyList() {
 		new DateTrigger((Date) null);
 		fail("A null constructor entry should cause DateTrigger to fire an IllegalArgumentException");
-	}
-
-	@Test
-	public void testDefaultConstructor() {
-		DateTrigger dateTrigger = new DateTrigger();
-		Date nextExecutionTime = dateTrigger.nextExecutionTime(null);
-		assertNotNull("The next Execution Time must have a value from a default constructor.", nextExecutionTime);
-		nextExecutionTime = dateTrigger.nextExecutionTime(null);
-		assertNull("The default constructor has only one entry and thus, this value should have already been pulled.",
-				nextExecutionTime);
 	}
 
 	@Test

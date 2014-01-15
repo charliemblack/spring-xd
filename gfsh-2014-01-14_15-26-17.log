@@ -1,0 +1,245 @@
+
+[info 2014/01/14 15:26:18.167 PST main tid=0x1] (msgTID=1 msgSN=0) 
+  ---------------------------------------------------------------------------
+  
+    Copyright (C) 1997-2013 VMware, Inc. All rights reserved. This product is
+    protected by U.S. and international copyright and intellectual property
+    laws. VMware products are covered by one or more patents listed at
+    http://www.vmware.com/go/patents.  VMware is a registered trademark or
+    trademark of VMware, Inc. in the United States and/or other jurisdictions.
+    All other marks and names mentioned herein may be trademarks of their
+    respective companies.
+  
+  ---------------------------------------------------------------------------
+  Java version:   7.0.1.8 build 43390 09/05/2013 10:00:53 PDT javac 1.6.0_26
+  Native version: native code unavailable
+  Source revision: 43390
+  Source repository: gemfire/branches/gemfire701X_maint
+  Running on: cblack-mbp.local/192.168.1.133, 4 cpu(s), x86_64 Mac OS X 10.9.1
+  Process ID: 4859
+  User: cblack
+  Current dir: /Users/cblack/dev/projects/spring-xd
+  Home dir: /Users/cblack
+  Command Line Parameters:
+    -Dgfsh=true
+  Class Path:
+    /Users/cblack/dev/pivotal/gemfire/GemFire_Current/lib/gemfire.jar
+    /Users/cblack/dev/pivotal/gemfire/GemFire_Current/lib/antlr.jar
+    /Users/cblack/dev/pivotal/gemfire/GemFire_Current/lib/gfsh-dependencies.jar
+    /Users/cblack/dev/pivotal/gemfire/GemFire_Current/lib/pulse-dependencies.jar
+    /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/lib/tools.jar
+  Library Path:
+    /Users/cblack/Library/Java/Extensions
+    /Library/Java/Extensions
+    /Network/Library/Java/Extensions
+    /System/Library/Java/Extensions
+    /usr/lib/java
+    .
+  System Properties:
+      awt.toolkit = sun.lwawt.macosx.LWCToolkit
+      file.encoding = UTF-8
+      file.encoding.pkg = sun.io
+      file.separator = /
+      ftp.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+      gfsh = true
+      gopherProxySet = false
+      http.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+      java.awt.graphicsenv = sun.awt.CGraphicsEnvironment
+      java.awt.printerjob = sun.lwawt.macosx.CPrinterJob
+      java.class.version = 51.0
+      java.endorsed.dirs = /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed
+      java.ext.dirs = /Users/cblack/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+      java.home = /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
+      java.io.tmpdir = /var/folders/1x/_h2jrjpj6yv1kymqtg0y4cjh0000gn/T/
+      java.runtime.name = Java(TM) SE Runtime Environment
+      java.runtime.version = 1.7.0_45-b18
+      java.specification.name = Java Platform API Specification
+      java.specification.vendor = Oracle Corporation
+      java.specification.version = 1.7
+      java.vendor = Oracle Corporation
+      java.vendor.url = http://java.oracle.com/
+      java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+      java.version = 1.7.0_45
+      java.vm.info = mixed mode
+      java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+      java.vm.specification.name = Java Virtual Machine Specification
+      java.vm.specification.vendor = Oracle Corporation
+      java.vm.specification.version = 1.7
+      java.vm.vendor = Oracle Corporation
+      java.vm.version = 24.45-b08
+      line.separator = 
+  
+      os.version = 10.9.1
+      path.separator = :
+      socksNonProxyHosts = local|*.local|169.254/16|*.169.254/16
+      sun.arch.data.model = 64
+      sun.boot.class.path = /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes
+      sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib
+      sun.cpu.endian = little
+      sun.cpu.isalist = 
+      sun.io.unicode.encoding = UnicodeBig
+      sun.java.command = com.gemstone.gemfire.management.internal.cli.Launcher
+      sun.java.launcher = SUN_STANDARD
+      sun.jnu.encoding = UTF-8
+      sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+      sun.nio.ch.bugLevel = 
+      sun.os.patch.level = unknown
+      user.country = US
+      user.language = en
+      user.timezone = America/Los_Angeles
+  ---------------------------------------------------------------------------
+  
+
+[config 2014/01/14 15:26:19.243 PST main tid=0x1] (msgTID=1 msgSN=1) ***** gfsh Environment ******
+  APP_COLLECTION_LIMIT=20
+   APP_FETCH_SIZE=1000
+   APP_LAST_EXIT_STATUS=0
+   APP_LOG_FILE=/Users/cblack/dev/projects/spring-xd/gfsh-2014-01-14_15-26-17.log
+   APP_NAME=gfsh
+   APP_PWD=/Users/cblack/dev/projects/spring-xd
+   APP_QUERY_RESULTS_DISPLAY_MODE=table
+   APP_QUIET_EXECUTION=false
+   SYS_CLASSPATH=/Users/cblack/dev/pivotal/gemfire/GemFire_Current/lib/gemfire.jar:/Users/cblack/dev/pivotal/gemfire/GemFire_Current/lib/antlr.jar:/Users/cblack/dev/pivotal/gemfire/GemFire_Current/lib/gfsh-dependencies.jar:/Users/cblack/dev/pivotal/gemfire/GemFire_Current/lib/pulse-dependencies.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/lib/tools.jar
+   SYS_GEMFIRE_DIR=/Users/cblack/dev/pivotal/gemfire/GemFire_Current
+   SYS_HOST_NAME=cblack
+   SYS_JAVA_VERSION=1.7.0_45
+   SYS_OS=Mac OS X
+   SYS_OS_LINE_SEPERATOR=
+  
+   SYS_USER=cblack
+   SYS_USER_HOME=/Users/cblack
+
+[info 2014/01/14 15:26:19.252 PST main tid=0x1] (msgTID=1 msgSN=2) Startup done in 1.663 seconds.
+
+[info 2014/01/14 15:26:26.938 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=5) Successfully connected to: [host=cblack-mbp, port=1099]
+
+[info 2014/01/14 15:26:31.136 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=6) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 15:26:31.131 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=25) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 15:52:34.877 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=7) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 15:52:34.874 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=26) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 15:52:37.977 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=8) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 15:52:37.975 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=27) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 15:52:42.472 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=9) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 15:52:42.471 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=28) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 16:09:02.584 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=10) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 16:09:02.583 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=29) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 16:09:04.012 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=11) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 16:09:04.010 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=30) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 16:43:02.995 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=12) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 16:43:02.993 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=31) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 17:04:55.478 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=13) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:04:55.476 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=32) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:04:56.650 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=14) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:04:56.648 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=33) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:04:57.691 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=15) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:04:57.689 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=34) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:07:25.098 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=16) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:07:25.097 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=35) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:12:54.583 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=17) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:12:54.581 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=36) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:13:26.233 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=18) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:13:26.231 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=37) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 17:13:27.763 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=19) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:13:27.762 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=38) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 17:31:53.042 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=20) [From Manager : locator1]
+  [From Manager : locator1][info 2014/01/14 17:31:53.039 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=39) Error occurred while executing "list regions".
+  [From Manager : locator1][fine 2014/01/14 17:31:53.040 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=40) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 17:31:54.772 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=22) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:31:54.770 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=41) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:31:56.411 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=23) [From Manager : locator1]
+  [From Manager : locator1][info 2014/01/14 17:31:56.409 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=42) Error occurred while executing "list regions".
+  [From Manager : locator1][fine 2014/01/14 17:31:56.410 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=43) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 17:31:57.626 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=25) [From Manager : locator1]
+  [From Manager : locator1][info 2014/01/14 17:31:57.624 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=44) Error occurred while executing "list regions".
+  [From Manager : locator1][fine 2014/01/14 17:31:57.624 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=45) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 17:31:59.722 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=27) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:31:59.720 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=46) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:01.102 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=28) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:01.100 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=47) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:03.024 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=29) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:03.023 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=48) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:04.419 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=30) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:04.417 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=49) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:05.961 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=31) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:05.960 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=50) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:07.088 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=32) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:07.085 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=51) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:08.088 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=33) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:08.086 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=52) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:09.134 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=34) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:09.132 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=53) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:10.054 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=35) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:10.052 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=54) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:10.960 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=36) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:10.958 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=55) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 17:32:12.796 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=37) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 17:32:12.795 PST RMI TCP Connection(6)-192.168.1.133 tid=0x7b] (msgTID=123 msgSN=56) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 20:24:39.909 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=38) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 20:24:39.907 PST RMI TCP Connection(9)-192.168.1.133 tid=0x1aa] (msgTID=426 msgSN=57) Executed list regions
+  [From Manager : locator1]
+
+[info 2014/01/14 20:24:41.599 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=39) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 20:24:41.598 PST RMI TCP Connection(9)-192.168.1.133 tid=0x1aa] (msgTID=426 msgSN=58) Executed list members
+  [From Manager : locator1]
+
+[info 2014/01/14 20:25:19.298 PST Gfsh Launcher tid=0x9] (msgTID=9 msgSN=40) [From Manager : locator1]
+  [From Manager : locator1][fine 2014/01/14 20:25:19.297 PST RMI TCP Connection(9)-192.168.1.133 tid=0x1aa] (msgTID=426 msgSN=59) Executed list regions
+  [From Manager : locator1]

@@ -34,6 +34,7 @@ import org.springframework.messaging.*;
 import org.springframework.util.Assert;
 
 import java.util.Collection;
+import java.util.Map;
 
 import static com.gemstone.gemfire.cache.partition.PartitionRegionHelper.getPrimaryMemberForKey;
 import static com.gemstone.gemfire.cache.partition.PartitionRegionHelper.isPartitionedRegion;
@@ -122,11 +123,15 @@ public class GemFireMessageBus extends MessageBusSupport implements DisposableBe
         public void handleMessage(Message<?> message) throws MessagingException {
             DistributedMember member = null;
             MessageHeaders messageHeaders = message.getHeaders();
+            for(Map.Entry<String, Object> entry : messageHeaders.entrySet()){
+                System.out.println("entry.getKey() = " + entry.getKey());
+                System.out.println("entry.getValue() = " + entry.getValue());
+            }
             Object destinationRegionName = messageHeaders.get(DESTINATION_REGION);
             if (destinationRegionName != null) {
                 Region region = CacheFactory.getAnyInstance().getRegion((String) destinationRegionName);
                 Object key = messageHeaders.get(PARTITION_KEY);
-                if (region != null) {
+                if (key != null && region != null) {
                     if (isPartitionedRegion(region)) {
                         member = getPrimaryMemberForKey(region, key);
                     }

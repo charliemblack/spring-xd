@@ -16,11 +16,11 @@
 
 package org.springframework.xd.dirt.server.options;
 
-import javax.validation.constraints.NotNull;
-
 import org.kohsuke.args4j.Option;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.xd.dirt.server.options.CommonDistributedOptions.Store;
+
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -38,7 +38,7 @@ public class SingleNodeOptions extends CommonOptions {
 	}
 
 	public static enum ControlTransport {
-		local, rabbit, redis;
+		local, rabbit, redis, gemfire;
 	}
 
 	@Option(name = "--analytics", usage = "How to persist analytics such as counters and gauges")

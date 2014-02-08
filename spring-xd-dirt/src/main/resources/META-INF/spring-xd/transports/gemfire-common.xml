@@ -1,41 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:gfe="http://www.springframework.org/schema/gemfire" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:gfe="http://www.springframework.org/schema/gemfire"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/gemfire http://www.springframework.org/schema/gemfire/spring-gemfire.xsd
-		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+		http://www.springframework.org/schema/gemfire http://www.springframework.org/schema/gemfire/spring-gemfire.xsd">
 
-    <bean id="createFilesForGemFire" class="java.io.File">
-        <constructor-arg value="#{ systemProperties['gemfire.name'] }" type="java.lang.String"/>
-    </bean>
-    <bean id="createFilesForGemFire2"
-          factory-bean="createFilesForGemFire"
-          factory-method="mkdirs"/>
 
-    <bean id="systemPrereqs"
-          class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-        <property name="targetObject" value="#{@systemProperties}"/>
-        <property name="targetMethod" value="putAll"/>
-        <property name="arguments">
-            <!-- The new Properties -->
-            <util:properties>
-                <prop key="user.dir">#{createFilesForGemFire.getAbsolutePath()}</prop>
-            </util:properties>
-        </property>
-    </bean>
-    <util:properties id="__spring_xd_props">
-        <prop key="groups">#{__GemFireGroup}</prop>
-        <prop key="mcast-port">0</prop>
-        <prop key="log-level">config</prop>
-        <prop key="log-file">server.log</prop>
-        <prop key="log-file-size-limit">10</prop>
-        <prop key="log-disk-space-limit">100</prop>
-        <prop key="locators">localhost[10334]</prop>
-    </util:properties>
+    <gfe:cache critical-heap-percentage="90" eviction-heap-percentage="80"/>
 
-    <gfe:cache properties-ref="__spring_xd_props" critical-heap-percentage="90" eviction-heap-percentage="80"/>
-    <gfe:cache-server auto-startup="true" port="0"/>
     <gfe:replicated-region id="__spring_xd_deploy"/>
     <gfe:replicated-region id="__spring_xd_undeploy"/>
 

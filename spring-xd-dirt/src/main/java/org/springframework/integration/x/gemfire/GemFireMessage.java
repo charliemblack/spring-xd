@@ -16,6 +16,8 @@
 
 package org.springframework.integration.x.gemfire;
 
+import org.springframework.messaging.Message;
+
 import java.io.Serializable;
 
 /**
@@ -24,12 +26,12 @@ import java.io.Serializable;
 public class GemFireMessage implements Serializable{
 
     private String channelName;
-    private Object payload;
+    private Message payload;
 
     public GemFireMessage() {
     }
 
-    public GemFireMessage(String channelName, Object payload) {
+    public GemFireMessage(String channelName, Message payload) {
         this.channelName = channelName;
         this.payload = payload;
     }
@@ -42,11 +44,11 @@ public class GemFireMessage implements Serializable{
         this.channelName = channelName;
     }
 
-    public Object getPayload() {
+    public Message getPayload() {
         return payload;
     }
 
-    public void setPayload(Object payload) {
+    public void setPayload(Message payload) {
         this.payload = payload;
     }
 

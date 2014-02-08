@@ -1,3 +1,8 @@
+export JAVA_OPTS=-Dgemfire.name=admin ; ./xd-admin --controlTransport gemfire
+export JAVA_OPTS=-Dgemfire.name=container1; ./xd-container --controlTransport gemfire --transport gemfire
+export JAVA_OPTS=-Dgemfire.name=container2; ./xd-container --controlTransport gemfire --transport gemfire
+
+
 Spring XD
 =========
 

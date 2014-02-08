@@ -25,13 +25,12 @@ import com.gemstone.gemfire.distributed.DistributedMember;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.integration.endpoint.MessageProducerSupport;
+import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
 import org.springframework.util.Assert;
 
 import java.util.HashMap;
 import java.util.Properties;
-
-import static org.springframework.integration.support.MessageBuilder.withPayload;
 
 
 /**
@@ -47,7 +46,7 @@ public class GemFireRPCMessaging extends FunctionAdapter implements Declarable {
         System.out.println("org.springframework.integration.x.gemfire.GemFireRPCMessaging.GemFireRPCMessaging");
     }
 
-    public static void send(DistributedMember member, String channelName, Object payload) {
+    public static void send(DistributedMember member, String channelName, Message payload) {
         if (logger.isDebugEnabled()) {
             logger.debug("org.springframework.integration.x.gemfire.GemFireRPCMessaging.send1" +
                     "\n\tmember = " + member +
@@ -57,7 +56,7 @@ public class GemFireRPCMessaging extends FunctionAdapter implements Declarable {
         FunctionService.onMember(member).withArgs(new GemFireMessage(channelName, payload)).execute(ID).getResult();
     }
 
-    public static void send(String channelName, Object payload) {
+    public static void send(String channelName, Message payload) {
         if (logger.isDebugEnabled()) {
             logger.debug("org.springframework.integration.x.gemfire.GemFireRPCMessaging.send2" +
                     "\n\tchannelName = " + channelName +
@@ -93,7 +92,8 @@ public class GemFireRPCMessaging extends FunctionAdapter implements Declarable {
         }
         GemFireMessageProducerSupport producerSupport = messageProducer.get(gemFireMessage.getChannelName());
         if (producerSupport != null) {
-            Message message = withPayload(gemFireMessage.getPayload()).build();
+            Message message = gemFireMessage.getPayload();
+            message = MessageBuilder.fromMessage(message).build();
             GemFireMessageProducerSupport handler = messageProducer.get(gemFireMessage.getChannelName());
             handler.pushMessage(message);
         }

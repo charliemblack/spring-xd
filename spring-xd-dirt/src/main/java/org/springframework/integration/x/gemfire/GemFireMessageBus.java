@@ -123,9 +123,11 @@ public class GemFireMessageBus extends MessageBusSupport implements DisposableBe
         public void handleMessage(Message<?> message) throws MessagingException {
             DistributedMember member = null;
             MessageHeaders messageHeaders = message.getHeaders();
-            for(Map.Entry<String, Object> entry : messageHeaders.entrySet()){
-                System.out.println("entry.getKey() = " + entry.getKey());
-                System.out.println("entry.getValue() = " + entry.getValue());
+            if (logger.isDebugEnabled()) {
+                logger.debug("GemFireMessageBus.handleMessage");
+                for (Map.Entry<String, Object> entry : messageHeaders.entrySet()) {
+                    logger.debug(String.format("entry.getKey() = %s\n\tentry.getValue() = %s", entry.getKey(), entry.getValue()));
+                }
             }
             Object destinationRegionName = messageHeaders.get(DESTINATION_REGION);
             if (destinationRegionName != null) {
@@ -141,7 +143,7 @@ public class GemFireMessageBus extends MessageBusSupport implements DisposableBe
                 //TODO : Maybe come up with some kind of round robin approach.  For now lets focus on NO Network HOPs.
                 member = CacheFactory.getAnyInstance().getDistributedSystem().getDistributedMember();
             }
-            GemFireRPCMessaging.send(member, name, message.getPayload());
+            GemFireRPCMessaging.send(member, name, message);
         }
     }
 
@@ -154,7 +156,7 @@ public class GemFireMessageBus extends MessageBusSupport implements DisposableBe
 
         @Override
         public void handleMessage(Message<?> message) throws MessagingException {
-            GemFireRPCMessaging.send(name, message.getPayload());
+            GemFireRPCMessaging.send(name, message);
         }
     }
 
@@ -173,7 +175,7 @@ public class GemFireMessageBus extends MessageBusSupport implements DisposableBe
         @Override
         protected boolean shouldCopyRequestHeaders() {
             /*
-			 * we've already copied the headers so no need for the ARPMH to do it, and we don't want the content-type
+             * we've already copied the headers so no need for the ARPMH to do it, and we don't want the content-type
 			 * restored if absent.
 			 */
             return false;
